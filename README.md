@@ -24,13 +24,86 @@ This project leverages machine learning to analyze NFL Combine data and predict 
 
 **Stacking Ensemble Recommended**: Best balance of accuracy and class prediction balance
 
-## 🛠️ Installation
+##  Installation
 
 1. **Clone the repository**
    ```bash
 git clone https://github.com/lsieyadji/NFL_Draft_Pred.git
 cd NFL_Draft_Pred
+pip install -r requirements.txt
+cd website
+python app.py
+Access the application
+Open http://localhost:5000 in your browser
 
-```bash
-git clone https://github.com/lsieyadji/NFL_Draft_Pred.git
-cd NFL_Draft_Pred
+ Project Structure
+text
+NFL_Draft_Pred/
+├── models/                 # Trained machine learning models
+├── data/                  # Raw and cleaned datasets
+├── src/                   # Data processing and model training scripts
+├── website/               # Flask web application
+│   ├── app.py            # Flask backend
+│   ├── templates/        # HTML templates
+│   └── static/           # CSS and JavaScript files
+├── requirements.txt      # Python dependencies
+└── README.md            # Project documentation
+ Usage
+Web Application
+Select player position
+
+Enter Combine metrics:
+
+Height (meters)
+
+Weight (kg)
+
+40-yard dash time
+
+Vertical jump (cm)
+
+Bench press reps
+
+Broad jump (cm)
+
+BMI
+
+Age
+
+Click "Predict Draft Selection" for instant results
+
+Model Training
+Training scripts are available in the src/ directory:
+
+data_preprocessing.py - Data cleaning and feature engineering
+
+random_forest_model.py - Random Forest implementation
+
+xgboost_model.py - XGBoost implementation
+
+stacking_ensemble.py - Stacking ensemble model
+
+ Data Sources
+NFL Combine data (2009-2012)
+
+Player physical attributes and athletic metrics
+
+Draft results and selection information
+
+ Technical Details
+Algorithms: Random Forest, XGBoost, Ensemble Methods
+
+Framework: Scikit-learn, XGBoost, Flask
+
+Frontend: HTML5, CSS3, JavaScript
+
+Validation: 5-fold cross-validation, train-test splits
+
+ Key Insights
+40-yard dash and vertical jump are among the most predictive features
+
+Position-specific thresholds significantly impact draft probability
+
+Class imbalance between drafted/undrafted players presents modeling challenges
+
+Ensemble methods provide the most robust predictions
