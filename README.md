@@ -48,7 +48,7 @@ NFL_Draft_Pred/
 │   └── static/           # CSS and JavaScript files
 ├── requirements.txt      # Python dependencies
 └── README.md            # Project documentation
- Usage
+## Usage
 Web Application
 Select player position
 
@@ -72,25 +72,27 @@ Age
 
 Click "Predict Draft Selection" for instant results
 
-Model Training
+## Model Training
 Training scripts are available in the src/ directory:
 
-data_preprocessing.py - Data cleaning and feature engineering
+data_cleaning.py - Data cleaning and feature engineering
 
-random_forest_model.py - Random Forest implementation
+Random_forest_code.py - Random Forest implementation
 
-xgboost_model.py - XGBoost implementation
+Xgboost_code.py - XGBoost implementation
 
-stacking_ensemble.py - Stacking ensemble model
+Stacking_code.py - Stacking ensemble model
 
- Data Sources
+Ensemble_code.py - Voting ensemble model
+
+ ## Data Sources
 NFL Combine data (2009-2012)
 
 Player physical attributes and athletic metrics
 
 Draft results and selection information
 
- Technical Details
+ ## Technical Details
 Algorithms: Random Forest, XGBoost, Ensemble Methods
 
 Framework: Scikit-learn, XGBoost, Flask
@@ -99,7 +101,7 @@ Frontend: HTML5, CSS3, JavaScript
 
 Validation: 5-fold cross-validation, train-test splits
 
- Key Insights
+ ## Key Insights
 40-yard dash and vertical jump are among the most predictive features
 
 Position-specific thresholds significantly impact draft probability
