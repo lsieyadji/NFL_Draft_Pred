@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Predict Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏈 Draft Predict Pro</h1>
+            <p>ML-powered NFL draft selection predictions</p>
+        </header>
+
+        <div class="prediction-form">
+            <div class="input-group">
+                <label>Position:</label>
+                <select id="position">
+                    {% for position in positions %}
+                    <option value="{{ position }}">{{ position }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Height (meters):</label>
+                    <input type="number" id="height" step="0.01" placeholder="1.85">
+                </div>
+                <div class="input-group">
+                    <label>Weight (kg):</label>
+                    <input type="number" id="weight" step="0.1" placeholder="100.0">
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>40-Yard Dash:</label>
+                    <input type="number" id="sprint_40yd" step="0.01" placeholder="4.50">
+                </div>
+                <div class="input-group">
+                    <label>Vertical Jump (cm):</label>
+                    <input type="number" id="vertical_jump" step="0.1" placeholder="85.0">
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Bench Press (reps):</label>
+                    <input type="number" id="bench_press" placeholder="20">
+                </div>
+                <div class="input-group">
+                    <label>Broad Jump (cm):</label>
+                    <input type="number" id="broad_jump" step="0.1" placeholder="300.0">
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>BMI:</label>
+                    <input type="number" id="bmi" step="0.1" placeholder="30.0">
+                </div>
+                <div class="input-group">
+                    <label>Age:</label>
+                    <input type="number" id="age" placeholder="22">
+                </div>
+            </div>
+
+            <button id="predict-btn">Predict Draft Selection</button>
+        </div>
+
+        <div id="result" class="result hidden">
+            <h3>Draft Prediction</h3>
+            <div id="prediction-text"></div>
+            <div id="probability"></div>
+            <div id="confidence"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
